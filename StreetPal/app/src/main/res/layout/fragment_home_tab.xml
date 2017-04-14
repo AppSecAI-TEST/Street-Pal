@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.sharekeg.streetpal.homefragments.HomeTab"
+    android:id="@+id/homeTab">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="@string/Welcome"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="@string/WelcomeText"
+                android:textColor="@color/border_home"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/Help"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/tvHelp"
+                android:layout_marginTop="30dp"
+                android:background="@color/gray_rectangles_of_available_helping"
+                android:drawablePadding="20dp"
+                android:drawableStart="@drawable/ic_org_icon"
+                android:gravity="start"
+                android:padding="15dp"
+                android:text="@string/string1"
+                android:textSize="13dp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:id="@+id/Police"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/Help"
+                android:layout_marginTop="30dp"
+                android:background="@color/gray_rectangles_of_available_helping"
+                android:drawablePadding="20dp"
+                android:drawableStart="@drawable/ic_call_icon"
+                android:gravity="start"
+                android:padding="15dp"
+                android:text="@string/string2"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Police"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="@string/string"
+                android:textSize="12dp"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:id="@+id/ivCallForHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvContact"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_call_help_icon"
+                android:layout_marginBottom="20dp"/>
+
+
+            <TextView
+                android:id="@+id/tvWelcomeUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/activity_horizontal_margin"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>
