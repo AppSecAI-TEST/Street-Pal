@@ -26,7 +26,7 @@
         android:icon="@drawable/ic_splash_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".splashscreeen.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +42,7 @@
         <activity android:name=".Home.HomeActivity" />
         <activity android:name=".Home.EditProfileActivity" />
         <activity android:name=".Registration.CongratulationActivity" />
-        <activity android:name=".Safe_Places.Safe_palce_Activity" />
+        <activity android:name=".safeplace.SafePlaceActivity" />
 
 
         <!--

@@ -49,7 +49,9 @@
             android:paddingTop="13dp"
             android:textColor="@color/black"
             android:textColorHint="@color/login_controls_hint"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:drawableLeft="@drawable/ic_username"
+            android:paddingLeft="10dp" />
 
         <EditText
             android:id="@+id/etpassword"
@@ -68,7 +70,9 @@
             android:paddingTop="15dp"
             android:textColor="@color/black"
             android:textColorHint="@color/login_controls_hint"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:drawableLeft="@drawable/ic_password"
+            android:paddingLeft="10dp" />
         <!-- Login button -->
         <Button
             android:id="@+id/btnLogin"

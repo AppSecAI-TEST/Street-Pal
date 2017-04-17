@@ -1,6 +1,6 @@
 package com.sharekeg.streetpal.Androidversionapi;
 
-import com.sharekeg.streetpal.homefragments.HomeTab;
+import com.sharekeg.streetpal.safeplace.Guide;
 import com.sharekeg.streetpal.userinfoforeditingprofile.UsersInfoForEditingProfile;
 import com.sharekeg.streetpal.userinfoforlogin.CurrenLocation;
 import com.sharekeg.streetpal.userinfoforsignup.UsersInfoForSignUp;
@@ -8,9 +8,9 @@ import com.sharekeg.streetpal.Login.LoginCredentials;
 import com.sharekeg.streetpal.userinfoforlogin.UserInfoForLogin;
 
 
-import okhttp3.MultipartBody;
+import java.util.List;
+
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 
 import retrofit2.http.Body;
@@ -37,6 +37,7 @@ public interface ApiInterface
 
     @GET("me")
     Call<UserInfoForLogin> getUser(@Header("Authorization") String token);
+
     @GET("me")
     Call<UserInfoForLogin> displayUserInfo();
 
@@ -52,11 +53,13 @@ public interface ApiInterface
 
     @Multipart
     @POST("me/photo")
-
     Call<RequestBody> uploadprofilePhoto(@Part("file\"; filename=\"my_image.jpg\" ") RequestBody image);
 
-     @POST("   ")
+    @POST("   ")
     Call<CurrenLocation> SetLocation(@Body CurrenLocation location);
+
+    @GET("posts")
+    Call<List<Guide>> getGuide();
 
 
 }

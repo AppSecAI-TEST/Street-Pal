@@ -22,7 +22,6 @@ public class ConfirmationActivity extends AppCompatActivity {
     private long countUp;
     private EditText etConfirmationCode;
     private Button btnSubmit;
-    private TextView tvback;
 
 
     @Override
@@ -35,13 +34,7 @@ public class ConfirmationActivity extends AppCompatActivity {
         etConfirmationCode=(EditText)findViewById(R.id.ET_Code);
         timerView = (TextView) findViewById(R.id.TimerView);
         btnSubmit=(Button)findViewById(R.id.btn_Submit);
-        tvback=(TextView) findViewById(R.id.tvback);
-        tvback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onPause();
-            }
-        });
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -13,72 +13,92 @@
         android:background="@color/white"
         tools:context="com.sharekeg.streetpal.SignUp.SignUpActivity">
 
-        <TextView
-            android:id="@+id/textView2"
+        <RelativeLayout
+            android:id="@+id/upperBar"
             android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_alignBottom="@+id/tvback"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@color/white"
-            android:gravity="center"
-            android:text="Sign Up"
-            android:textColor="#000" />
-        <TextView
-            android:id="@+id/tvback"
-            android:layout_width="52dp"
-            android:layout_height="28dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:background="@drawable/bg" />
+            android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/IV_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/ic_change_profile_img"
-            android:gravity="center_horizontal"
-            android:textSize="13dp"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_alignBottom="@+id/tvback"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="Sign Up"
+                android:textColor="#000" />
 
-            />
+            <TextView
+                android:id="@+id/tvback"
+                android:layout_width="52dp"
+                android:layout_height="28dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/bg" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/TV_upload"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/uploadPPlayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/IV_profile"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="8dp"
-            android:text="Upload Profile Picture"
-            android:textColor="#000"
-            android:textSize="12dp" />
+            android:layout_below="@+id/upperBar"
+            android:background="@color/gray_rectangles_of_available_helping">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/IV_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/ic_change_profile_img"
+                android:gravity="center_horizontal"
+                android:textSize="13dp"
+
+                />
+
+            <TextView
+                android:id="@+id/TV_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IV_profile"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="8dp"
+                android:text="Upload Profile Picture"
+                android:textColor="#000"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
 
         <LinearLayout
-            android:id="@+id/Linear"
+            android:id="@+id/Llinfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/TV_upload"
-            android:layout_marginTop="5dp"
+            android:layout_below="@id/uploadPPlayout"
+            android:layout_marginTop="0dp"
             android:background="@color/white"
             android:orientation="vertical">
+
             <EditText
 
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:background="@color/signup_controls_bg"
                 android:hint="@string/name"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/signup_controls_hint"
                 android:textSize="12dp" />
+
             <EditText
 
                 android:id="@+id/etuserName"
@@ -130,28 +150,48 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_info"
+        <LinearLayout
+            android:id="@+id/infoBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Linear"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:text="@string/privateinfo"
-            android:textAllCaps="true"
-            android:textSize="10dp"
-            android:textColor="#9f9999" />
+            android:layout_below="@+id/Llinfo"
+            android:background="@color/gray_rectangles_of_available_helping">
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/privateinfo"
+                android:textAllCaps="true"
+                android:textColor="#9f9999"
+                android:textSize="11dp" />
+        </LinearLayout>
+
 
         <RelativeLayout
-            android:id="@+id/Relative"
+            android:id="@+id/rlPrivateInfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/tv_info"
-            android:layout_marginTop="5dp"
+            android:layout_below="@+id/infoBar"
             android:layout_centerInParent="true"
-            android:background="@color/white"
-           >
+            android:layout_marginTop="5dp"
+            android:background="@color/white">
 
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/etage"
+                android:layout_toRightOf="@+id/etage"
+                android:dropDownSelector="@drawable/img"
+                android:padding="20dp"
+                android:textColor="@color/black" />
             <TextView
                 android:id="@+id/TV_sex"
                 android:layout_width="match_parent"
@@ -163,17 +203,6 @@
                 android:textColor="@color/black"
                 android:textColorHint="@color/signup_controls_hint"
                 android:textSize="12dp" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@+id/etage"
-                android:dropDownSelector="@drawable/img"
-                android:padding="20dp"
-                android:textColor="@color/black" />
-
             <EditText
                 android:id="@+id/etWork"
                 android:layout_width="match_parent"
@@ -221,6 +250,7 @@
                 android:id="@+id/etage"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:background="@color/white"
@@ -234,22 +264,27 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlPrivateInfo"
+            android:layout_marginTop="10dp">
 
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="220dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/Relative"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="15dp"
-            android:background="@color/signup_button_bg"
-            android:gravity="center"
-            android:text="Sign Up"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="12dp" />
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/signup_button_bg"
+                android:gravity="center"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+        </RelativeLayout>
 
 
     </RelativeLayout>

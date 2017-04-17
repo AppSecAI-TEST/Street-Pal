@@ -37,7 +37,8 @@
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ic_notification_icon" />
+            android:src="@drawable/ic_notification_icon"
+            android:layout_marginLeft="10dp" />
 
         <ImageView
             android:id="@+id/ivSettings"
@@ -47,7 +48,8 @@
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_settings_img" />
+            android:background="@drawable/ic_settings_img"
+            android:layout_marginRight="10dp" />
 
     </RelativeLayout>
 
@@ -86,7 +88,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/infolayout"
         android:layout_marginTop="10dp"
-        android:background="@drawable/black_borders">
+        android:background="@drawable/black_borders"
+        android:layout_alignParentLeft="true">
 
 
         <Button

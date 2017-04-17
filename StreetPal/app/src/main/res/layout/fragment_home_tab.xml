@@ -52,7 +52,8 @@
                 android:padding="15dp"
                 android:text="@string/string1"
                 android:textSize="13dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_org_icon" />
 
             <TextView
                 android:textColor="@color/black"
@@ -67,7 +68,8 @@
                 android:gravity="start"
                 android:padding="15dp"
                 android:text="@string/string2"
-                android:textSize="13dp" />
+                android:textSize="13dp"
+                android:drawableLeft="@drawable/ic_call_icon" />
 
             <TextView
                 android:id="@+id/tvContact"

@@ -68,5 +68,10 @@
     <string name="title_location_permission">Location Acess</string>
     <string name="text_location_permission">Allow app to acess you location</string>
     <string name="ok">Ok</string>
+    <string name="Safe_Places">SAFE PLACES</string>
+    <string name="select_place_that_y_need">Select place that you need then tap navigate</string>
+    <string name="navigate">Navigate</string>
+    <string name="mark_safe">Mark safe</string>
+    <string name="call_vol">Call volunteer</string>
 
 </resources>

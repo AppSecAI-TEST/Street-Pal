@@ -31,6 +31,7 @@
     <color name="resend_btn">#363636</color>
     <color name="submit_btn">#fbaf5d</color>
     <color name="Green">#4eb96a</color>
+    <color name="nav_base_line">#e1e1e1</color>
     <color name="confirmation_controls_hint">#c7c4c4</color>
 
     <!---->
@@ -53,6 +54,14 @@
     <color name="border_home_tabs_color">#dad7d7</color>
     <color name="border_home">#b1b0b0</color>
     <!---->
+<!--Safe Place Activity-->
 
+    <color name="navigate_btn">#363636</color>
+    <color name="btn_callvol_marksafe">#fbaf5d</color>
+    <color name="upper_bar_layout">#fbaf5d</color>
+
+
+
+    <!---->
 
 </resources>
