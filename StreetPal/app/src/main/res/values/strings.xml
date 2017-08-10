@@ -1,77 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Street Pal</string>
-    <string name="logintoacc">Log into your \n  \t\t\t account</string>
-    <string name="password">Password</string>
-    <string name="user_name">Username or E-mail</string>
-    <string name="select_contact">Select your  trusted contact</string>
-    <string name="contact_name">Name</string>
-    <string name="register_txt">Don\'t have an account? <b>Sign Up</b></string>
-    <string name="contact_mob">Mobile</string>
-    <string name="select_button">Select</string>
-    <string name="action_done">Done</string>
-    <string name="login">Login</string>
-    <string name="OPenG">OPen Gallery</string>
-    <string name="OPenC">OPen Camera</string>
-    <string name="EditTxt">Confirmation Code </string>
-    <string name="btn1">Submit</string>
-    <string name="btn2">Resend </string>
-    <string name="b"> Select From  </string>
-    <string name="TxtView"> Confirmation Code Will Be Send Within 60 Sec.
-    </string>
-    <string name="privateinfo">Private Information</string>
-    <string name="confrim_title">CONFIRMATION</string>
-    <string-array name="Sex">
-        <item>Female</item>
-        <item>Male</item>
-    </string-array>
-    <string name="change_profile_text">Change Profile Picture</string>
-    <string name="user_name_hint">User Name</string>
-    <string name="mail_hint">Mail</string>
-    <string name="phone_number_hint">Phone Number</string>
-    <string name="sex_hint">Sex</string>
-    <string name="age_hint">Age</string>
-    <string name="work_hint">Work</string>
-    <string name="national_id_hint">National ID</string>
-    <string name="password_hint">Password</string>
-    <string name="back_button">Back</string>
-    <string name="edtiprofile">Edit Profile</string>
-    <string name="username">User Name</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="call_for_help">Call for help</string>
-    <string name="upload_national_card">Upload National Card</string>
-    <string name="name">Name</string>
-    <string name="helpConfirmation">Help Confirmation</string>
-    <string name="Confirmation_Message">Your location will be send within 10s,If you want to cancel help click cancel.</string>
+    <string name="call_trusted_contact">Call Trusted Contact</string>
     <string name="Welcome">Welcome</string>
-    <string name="string">In case you need our help &amp; found you can \n \t
-                 directly contact just call our help. "</string>
-    <string name="string2">Available Helping Organizations
-   Police Station : 122</string>
-    <string name="string1">Available Helping Organizations
-    Organization x : 023456778889</string>
-    <string name="WelcomeText">StreetPal Shows to you quick information for helping </string>
-    <string name="title_activity_congratulation">CongratulationActivity</string>
-
-
-
-    <!-- TODO: Remove or change this placeholder text -->
-
-    <string name="add_trusted_contact">ADD TRUSTED CONTACT</string>
-    <string name="skip">Skip</string>
-    <string name="select_your_trusted_contact">Select your trusted contact that you want</string>
-    <string name="select_your_trusted_contact_part2">to help you later</string>
-    <string name="Your_selected_contact">Your selected contact is</string>
-    <string name="please_tab_next">Please tab next to finish your selection</string>
-    <string name="title_location_permission">Location Acess</string>
-    <string name="text_location_permission">Allow app to acess you location</string>
-    <string name="ok">Ok</string>
-    <string name="Safe_Places">SAFE PLACES</string>
-    <string name="select_place_that_y_need">Select place that you need then tap navigate</string>
-    <string name="navigate">Navigate</string>
-    <string name="mark_safe">Mark safe</string>
-    <string name="call_vol">Call volunteer</string>
+    <string name="WelcomeText">Tell us what\'s happening</string>
+    <string name="string1_card_item">I don\'t know what to do</string>
+    <string name="string2_card_item">I am now at the police station, what should i do?</string>
+    <string name="string3_card_item">I filed a report at the police station, what  should i do?</string>
+    <string name="string4_card_item">I have physical injuries, what should i do?</string>
+    <string name="string5_card_item">I need to talk to someone, what should i do?</string>
 
 </resources>

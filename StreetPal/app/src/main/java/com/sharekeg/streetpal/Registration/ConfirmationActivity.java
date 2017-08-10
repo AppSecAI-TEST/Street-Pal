@@ -43,7 +43,7 @@ public class ConfirmationActivity extends AppCompatActivity {
                     Intent i = new Intent(ConfirmationActivity.this, SelectTrustedContactsActivity.class);
                     startActivity(i);
                 }else{
-                    etConfirmationCode.setError("Empty Code");
+                    etConfirmationCode.setError(getApplicationContext().getResources().getString(R.string.confimation_code_validation));
                 }
             }
         });
@@ -59,7 +59,7 @@ public class ConfirmationActivity extends AppCompatActivity {
 
    tvWelcomeUser=(TextView)findViewById(R.id.tv_welcome_user);
         welcomeUserName=getIntent().getExtras().getString("UserNameWelcomeText");
-        tvWelcomeUser.setText("Welcome "+welcomeUserName+" !");
+        tvWelcomeUser.setText(getApplicationContext().getResources().getString(R.string.Welcome)+welcomeUserName+" !");
 
     }
 

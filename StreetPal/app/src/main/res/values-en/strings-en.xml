@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Street Pal</string>
+    <string name="password">Password</string>
+    <string name="user_name">Username or E-mail</string>
+    <string name="select_contact">Select your  trusted contact</string>
+    <string name="contact_name">Name</string>
+    <string name="register_txt">Don\'t have an account? <b>Sign Up</b></string>
+    <string name="contact_mob">Mobile</string>
+    <string name="select_button">Select</string>
+    <string name="action_done">Done</string>
+    <string name="login">Login</string>
+    <string name="OPenG">Open Gallery</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="recording">Recording</string>
+    <string name="tvnumber">Number</string>
+    <string name="tvsignUP">Sign Up</string>
+    <string name="tvuploadPP">Upload Profile Picture</string>
+    <string name="OPenC">Open Camera</string>
+    <string name="EditTxt">Confirmation Code </string>
+    <string name="btn1">Submit</string>
+    <string name="btn2">Resend </string>
+    <string name="b"> Select From  </string>
+    <string name="TxtView"> Confirmation Code Will Be Send Within 60 Sec.
+    </string>
+    <string name="privateinfo">Private Information</string>
+    <string name="confrim_title">CONFIRMATION</string>
+    <string-array name="Sex">
+        <item>Female</item>
+        <item>Male</item>
+        <item>other</item>
+    </string-array>
+    <string name="tv_upload_profile_picture">Upload Profile Picture</string>
+    <string name="change_profile_text">Change Profile Picture</string>
+    <string name="user_name_hint">User Name</string>
+    <string name="mail_hint">E-Mail Address</string>
+    <string name="phone_number_hint">Phone Number</string>
+    <string name="sex_hint">Sex</string>
+    <string name="age_hint">Age</string>
+    <string name="work_hint">Work</string>
+    <string name="back_button">Cancel</string>
+    <string name="btn_done">Done</string>
+    <string name="editProfilePrivateInfo">PRIVATE INFORMATION</string>
+    <string name="national_id_hint">National ID</string>
+    <string name="password_hint">Password</string>
+    <string name="edtiprofile">Edit Profile</string>
+    <string name="username">User Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="call_for_help">Call for help</string>
+    <string name="upload_national_card">Upload National Card</string>
+    <string name="editProfileFullName">Name</string>
+    <string name="name">Name</string>
+
+    <string name="helpConfirmation">Help Confirmation</string>
+    <string name="Confirmation_Message">Your location will be sent within 10s,If you want to cancel help click cancel.</string>
+    <string name="Welcome">Welcome</string>
+    <string name="string">In case you need our help &amp; found you can \n \t
+                 directly contact just call our help. "</string>
+    <string name="string3">I have been sexually harassed </string>
+    <string name="string2">I am being sexually harassed now.\n What should i do?</string>
+    <string name="string1">I think i am being followed and someone is about to sexually harass me.\n What should i do?</string>
+    <string name="WelcomeText">Tell us what\'s happening</string>
+    <string name="title_activity_congratulation">CongratulationActivity</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="add_trusted_contact">ADD TRUSTED CONTACT</string>
+    <string name="skip">Skip</string>
+    <string name="select_your_trusted_contact">Select your trusted contact that you want</string>
+    <string name="select_your_trusted_contact_part2">to help you later</string>
+    <string name="Your_selected_contact">Your selected contact is</string>
+    <string name="please_tab_next">Please tab next to finish your selection</string>
+    <string name="title_location_permission">Location Acess</string>
+    <string name="text_location_permission">Allow app to acess you location</string>
+    <string name="ok">Ok</string>
+    <string name="Safe_Places">SAFE PLACES</string>
+    <string name="select_place_that_y_need">Select place that you need then tap navigate</string>
+    <string name="mark_safe">Mark safe</string>
+    <string name="call_vol">Call volunteer</string>
+
+
+    <string name="text_dialog_choose">Choose option</string>
+    <string name="option_camera">Camera</string>
+    <string name="option_gallery">Gallery</string>
+    <string name="err_toast">Failed to uploade profile picture</string>
+    <string name="txt_try_toUpload_again">Try again</string>
+    <string name="uploaded_successfully">Profile picture is uploaded successfully</string>
+    <string name="smthing_went_wrong">Something went wrong</string>
+    <string name="exit">Exit</string>
+    <string name="txt_are_you_sure">Are you sure?</string>
+    <string name="loginmail_validation">Empty username or email</string>
+    <string name="loginpass_validation">Empty password</string>
+    <string name="loginpass_validation_invalid">Invalid password</string>
+    <string name="txt_connection_Failed">Connection Failed</string>
+    <string name="dialog_logging">Logging in ...</string>
+    <string name="dialog_signing_up">Signing up ...</string>
+
+    <string name="signup_name_validation">Empty name</string>
+    <string name="signup_emptymail_validation">Empty E-mail Address</string>
+    <string name="signup_invalidmail_validation">Invalid E-mail</string>
+    <string name="signup_age_validation">Empty age</string>
+    <string name="signup_phonenumber_validation">Empty phone number</string>
+    <string name="signup_username_validation">Empty username</string>
+    <string name="signup_work_validation">Empty work</string>
+    <string name="signup_nationalid_validation">Empty national ID</string>
+    <string name="select_trusted_contact_dialog_title">Select contact</string>
+    <string name="select_trusted_contact_dialog_message">Are you sure you want to select this contact ?</string>
+    <string name="select_trusted_contact_dialog_message_skipping">Are you sure you want to skip this step ?</string>
+    <string name="confimation_code_validation">Empty code</string>
+
+
+    <string name="checkInternet">Check your internet connection</string>
+    <string name="saveChangesdialoge">Save Changes</string>
+    <string name="saveChangesMessage">Are you sure you want to save the changes ?</string>
+    <string name="txtcontactAccessNeeded">Contacts access needed</string>
+    <string name="txtcontactAccessNeededmessage">please confirm Contacts access </string>
+    <string name="txtNoPermissions">No permissions</string>
+    <string name="txtLoading">Loading...</string>
+    <string name="txtRecordingstop">Recording Stopped</string>
+    <string name="txtSuccess">Success</string>
+    <string name="resolutionRequired">Resolution Required</string>
+    <string name="txtSettingsChange">Settings change unavailable</string>
+    <string name="mapyourLocation">Your location</string>
+
+
+    <!-- Settings Activity -->
+
+    <string name="setting">OPTIONS</string>
+    <string name="changepass">Change password...</string>
+    <string name="sendmail_feedbackActivity">Send mail...</string>
+    <string name="feedback_err">You did not enter a feedback</string>
+    <string name="settings">SETTINGS</string>
+    <string name="language">Language</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="account">ACCOUNT</string>
+    <string name="editProfile">Edit Profile</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="trusted_contact">Trusted Contact</string>
+    <string name="Report_a_problem">Report a Problem</string>
+    <string name="logout">Logout</string>
+    <string name="support">SUPPORT </string>
+    <string name="password1">PASSWORD</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm new Password</string>
+    <string name="united_kingdom">(United Kingdom)</string>
+    <string name="english">English</string>
+    <string name="egypt">(Egypt)</string>
+    <string name="arabic">Arabic</string>
+    <string name="add_new">Add new</string>
+    <string name="remove">Remove</string>
+    <string name="edit">Edit</string>
+    <string name="privacypolicy">Privacy Policy</string>
+    <string name="Feedback">Feedback</string>
+    <string name="send">Send</string>
+    <string name="generalfeedback">GENERAL FEEDBACK</string>
+    <string name="Briefly">Briefly Explain What you Love , or what could improve</string>
+    <string name="err_changePass">Do not match</string>
+
+    <!--____________________________ FQAs ______________________-->
+    <string name="static_guide_title">We support you with some of FAQs that will avoid and protect you</string>
+    <string name="static_guide_case1">I am being sexually harassed now, what should I do?</string>
+    <string name="static_guide_case1_instruction">• We will send a distress signal, we are looking for nearby advocates and your trusted contacts will also be notified.\n
+• Meanwhile, follow our instructions.\n
+        • Try to get attention to your situation by loudly asking for help and stating what happened exactly “Sexual Harassment”\n
+• Ask people to help you by taking him to the nearest police station and to testify while filing the official sexual harassment report.\n
+</string>
+
+
+    <string name="static_guide_case2">I have been sexually harassed and I am now at the police station, what should I do?</string>
+    <string name="static_guide_case2_instructions">• We will send a distress signal, we will look for nearby advocates and your trusted contacts will also be notified.\n
+• Meanwhile, follow our instructions.\n
+• You should ask for the human rights officer and explain you want to file a sexual harassment complaint.\n
+• Present the medical report –if you have one- and ask for it to be included in the complaint.\n
+• You can call Nazra for Feminist Studies for legal and psychological support: 01011910917. Nazra will send you a trained lawyer if available. \n
+• Make sure to state everything that happened as is. You have the right to give your statement in a separate space than the one the harasser is held in.\n
+• Write down the complaint number and follow up on the investigation.\n
+• If someone refused to help you at the police station, call the Ministry of Interior hotline: 138 and report the incident. \n
+• If you are injured and/or need a medical report, head to nearest hospital listed and ask to be directed to the emergency room, get checked out and ask for a medical report.\n
+• If you feel you need to talk to a professional, you can call Al-Nadeem Institute for psychological support: 01006662404 \n
+• You can call Nazra for Feminist Studies for psychological support: 01011910917 \n
+• In a couple of days, you should go to the general investigation office and you will tell your statement again with your lawyer.\n
+</string>
+
+
+    <string name="static_guide_case3">I have been sexually harassed and I filed a report at the police station, what should I do?</string>
+    <string name="static_guide_case3_instructions">• You can call Nazra for Feminist Studies for legal and psychological support: 01011910917. Nazra will send you a trained lawyer if available. \n
+• Make sure to state everything that happened as is. You have the right to give your statement in a separate space than the one the harasser is held in.\n
+• Write down the complaint number and follow up on the investigation.\n
+• If someone refused to help you at the police station, call the Ministry of Interior hotline: 138 and report the incident. \n
+• If you are injured and/or need a medical report, head to nearest hospital listed and ask to be directed to the emergency room, get checked out and ask for a medical report.\n
+• If you feel you need to talk to a professional, you can call Al-Nadeem Institute for psychological support: 01006662404 \n
+• You can call Nazra for Feminist Studies for psychological support: 01011910917 \n
+• In a couple of days, you should go to the general investigation office and you will tell your statement again with your lawyer.\n
+• Follow your lawyer’s instructions and don’t ever take back you statement. \n
+• If you are threatened or harassed by the family of the harasser, communicate with your lawyer and file a restraining order against them.\n
+• Follow up with your case number until the case reaches courts and the harasser gets a sentence. \n
+</string>
+
+
+    <string name="static_guide_case4">I have been sexually harassed and I have physical injuries, what should I do? </string>
+    <string name="static_guide_case4_instructions">• We will send a distress signal, we will look for nearby advocates and your trusted contacts will also be notified.\n
+• Meanwhile, follow our instructions.\n
+• If you are hurt and need medical attention please, head to the nearest hospital to get medical help and file a medical report.\n
+• You can always go to the nearest police station and file and official “Sexual Harassment” Complaint.\n
+
+</string>
+
+
+    <string name="static_guide_case5">I have been sexually harassed and I need to talk to someone, what should I do?</string>
+    <string name="static_guide_case5_instructions">• We will send a distress signal, we will look for nearby advocates and your trusted contacts will also be notified.\n
+• Meanwhile, follow our instructions.\n
+• If you are hurt and need medical attention please, head to the nearest hospital to get medical help and file a medical report.\n
+• You can always go to the nearest police station and file and official “Sexual Harassment” Complaint.\n
+</string>
+    <!--____________________________ User guide ______________________-->
+    <string name="user_guide_postive_button">Yes</string>
+    <string name="user_guide_negative_button">No</string>
+    <string name="user_guide_neutral_button">I have been sexually harassed </string>
+    <string name="user_guide_question_1">Hey,I am your street pal. \n  What is wrong?</string>
+    <string name="user_guide_case_1">I think I am being followed by someone</string>
+    <string name="user_guide_case_2">I am being harassed now!</string>
+    <string name="user_guide_case_1_qustion1">Do your surroundings feel safe? Do you think people around you might help?</string>
+    <string name="user_guide_case_1_qustion2"> - Confront the possible threat and establish eye contact. \n
+ - Remember your voice is a very powerful weapon, so use it more. \n
+ - You can inquire in a direct and firm tone by asking: “Is something wrong? - You keep looking at me, do I know you?” \n
+ - Remember, your safety comes first. You DO NOT have to do anything that might endanger you. \n
+
+        Are you safe now?</string>
+    <string name="user_guide_user_safe">We are glad you are safe and sound</string>
+    <string name="user_guide_button_map">Go to map</string>
+    <string name="user_guide_button_know_more">We will navigate you to full guide, Tap <b>Go To Guide</b> below</string>
+    <string name="user_guide_button_go_to_guide">Go To Guide</string>
+    <string name="user_guide_user_not_safe">We are going to send an alert to your trusted contacts to notify them about your situation, Tap <b>Go to map</b> button to select a safe place and navigate to it</string>
+
+
+</resources>

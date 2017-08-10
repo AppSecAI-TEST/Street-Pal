@@ -66,7 +66,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
         // object of retrofit
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.5/v0/")
+                .baseUrl("http://sharekeg.com:8088/v0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         etEmail = (EditText) findViewById(R.id.etemail);
@@ -108,8 +108,9 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View view) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
-                builder.setTitle("Choose Option")
-                        .setItems(new String[]{"Camera", "Gallery"}, new DialogInterface.OnClickListener() {
+                builder.setTitle(R.string.text_dialog_choose)
+                        .setItems(new String[]{getApplicationContext().getResources().getString(R.string.option_camera)
+                                , getApplicationContext().getResources().getString(R.string.option_gallery)}, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 if (i == 0) {
@@ -137,8 +138,8 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                     @Override
                     public void onClick(View view) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
-                        builder.setTitle("Choose Option")
-                                .setItems(new String[]{"Camera", "Gallery"}, new DialogInterface.OnClickListener() {
+                        builder.setTitle(R.string.text_dialog_choose)
+                                .setItems(new String[]{String.valueOf(R.string.option_camera), String.valueOf(R.string.option_gallery)}, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
                                         if (i == 0) {
@@ -180,7 +181,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             focusView.requestFocus();
         } else {
             pDialog = new ProgressDialog(SignUpActivity.this);
-            pDialog.setMessage("Logging in...");
+            pDialog.setMessage(String.valueOf(R.string.dialog_signing_up));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -211,48 +212,48 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
         work = etWork.getText().toString();
         boolean cancel = false;
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            etPassword.setError("Invalid password");
+            etPassword.setError(getText(R.string.loginpass_validation));
             focusView = etPassword;
             cancel = true;
 
         }
         if (TextUtils.isEmpty(name)) {
-            etName.setError("Empty name");
+            etName.setError(getText(R.string.signup_name_validation));
             focusView = etName;
             cancel = true;
         }
         if (TextUtils.isEmpty(age)) {
-            etAge.setError("Empty age");
+            etAge.setError(getText(R.string.signup_age_validation));
             focusView = etAge;
             cancel = true;
         }
 
         if (TextUtils.isEmpty(work)) {
-            etWork.setError("Empty work");
+            etWork.setError(getText(R.string.signup_work_validation));
             focusView = etWork;
             cancel = true;
         }
         if (TextUtils.isEmpty(nationalId)) {
-            etNationalId.setError("Empty nationalId");
+            etNationalId.setError(getText(R.string.signup_nationalid_validation));
             focusView = etNationalId;
             cancel = true;
         }
         if (TextUtils.isEmpty(phone)) {
-            etPhone.setError("Empty phone");
+            etPhone.setError(getText(R.string.signup_phonenumber_validation));
             focusView = etPhone;
             cancel = true;
         }
         if (TextUtils.isEmpty(userName)) {
-            etUserName.setError("Empty UserName");
+            etUserName.setError(getText(R.string.signup_username_validation));
             focusView = etUserName;
             cancel = true;
         }
         if (TextUtils.isEmpty(email)) {
-            etEmail.setError("Empty username");
+            etEmail.setError(getText(R.string.signup_emptymail_validation));
             focusView = etEmail;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            etEmail.setError("Invalid email");
+            etEmail.setError(getText(R.string.signup_invalidmail_validation));
             focusView = etEmail;
             cancel = true;
         }
@@ -284,7 +285,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
             public void onFailure(Call<UsersInfoForSignUp> call, Throwable t) {
                 pDialog.dismiss();
 
-                Snackbar.make(btnSignUp, "Connection Failed!", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(btnSignUp, R.string.txt_connection_Failed, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         attemptSignUp();
@@ -318,7 +319,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onFailure(Call<RequestBody> call, Throwable t) {
-                Snackbar.make(btnSignUp, "Failed to upload Profile-Photo", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(btnSignUp, R.string.err_toast, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         uploadProfilePhoto(fileProfiePhotoPath);
@@ -351,7 +352,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onFailure(Call<RequestBody> call, Throwable t) {
-                Snackbar.make(btnSignUp, "Failed to upload National-Id-Photo", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(btnSignUp, "Failed to upload National-Id-Photo", Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         uploadNationalIdPhoto(fileNationaPhotoPath);
@@ -403,7 +404,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
 
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.smthing_went_wrong, Toast.LENGTH_LONG).show();
         }
         try {
             if (requestCode == REQUEST_TAKE_profile_PHOTO && resultCode == RESULT_OK && null != data) {
@@ -419,7 +420,7 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 cursor.close();
 
                 IV_profile.setImageURI(selectedImage);
-                Toast.makeText(this, "profile Photo is uploaded Successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.uploaded_successfully, Toast.LENGTH_LONG).show();
 
 
             }
@@ -438,12 +439,12 @@ public class SignUpActivity extends AppCompatActivity implements AdapterView.OnI
                 cursor.close();
 
                 IV_profile.setImageURI(selectedImage);
-                Toast.makeText(this, "profile Photo is uploaded Successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.uploaded_successfully, Toast.LENGTH_LONG).show();
 
 
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.smthing_went_wrong, Toast.LENGTH_LONG).show();
         }
     }
 

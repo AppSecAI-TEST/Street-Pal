@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.sharekeg.streetpal.Androidversionapi.ApiInterface;
 import com.sharekeg.streetpal.R;
+import com.sharekeg.streetpal.Settings.SettingsActivity;
 import com.sharekeg.streetpal.userinfoforeditingprofile.UsersInfoForEditingProfile;
 import com.sharekeg.streetpal.userinfoforlogin.UserInfoForLogin;
 import com.sharekeg.streetpal.userinfoforsignup.UsersInfoForSignUp;
@@ -39,10 +40,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class EditProfileActivity extends AppCompatActivity {
-    private EditText etUserName, etEmail, etPhoneNumber, etAge, etWork, etPassword;
-    private TextView tvBack, tvSex, tvNationalId;
-    private ImageView ivSettings, ivChanceProfilePicture;
-    private String mediaPath, email, userName, phone, age, work, password;
+    private EditText etUserName, etEmail, etPhoneNumber, etAge, etWork, etfullName;
+    private TextView tvCancel, tvSex,tvDone;
+    private ImageView  ivChanceProfilePicture;
+    private String mediaPath, email, userName, phone, age, work, fullname;
     View focusView = null;
     ApiInterface apiInterface;
     private ProgressDialog pDialog;
@@ -51,7 +52,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private Uri selectedImage;
     private File f;
     private String token;
-    ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class EditProfileActivity extends AppCompatActivity {
         setContentView(R.layout.edit_profile);
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.27.27.86/v0/")
+                .baseUrl("http://sharekeg.com:8088/v0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         etUserName = (EditText) findViewById(R.id.userNameEditTextId);
@@ -68,11 +69,10 @@ public class EditProfileActivity extends AppCompatActivity {
         tvSex = (TextView) findViewById(R.id.sexEditTextId);
         etAge = (EditText) findViewById(R.id.ageEditTextId);
         etWork = (EditText) findViewById(R.id.workEditTextId);
-        tvNationalId = (TextView) findViewById(R.id.nationalIdEditTextId);
-        etPassword = (EditText) findViewById(R.id.passwordEditTextId);
+        etfullName = (EditText) findViewById(R.id.fullnameEditTextId);
         ivChanceProfilePicture = (ImageView) findViewById(R.id.changeProfileImg);
-        tvBack = (TextView) findViewById(R.id.backTextId);
-        ivSettings = (ImageView) findViewById(R.id.settingsImgId);
+        tvCancel = (TextView) findViewById(R.id.backTextId);
+        tvDone = (TextView) findViewById(R.id.tvDoneId);
 
 
 //        token = getIntent().getExtras().getString("Token");
@@ -92,28 +92,28 @@ public class EditProfileActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<UserInfoForLogin> call, Throwable t) {
-                Toast.makeText(EditProfileActivity.this, "Check your internet connection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditProfileActivity.this, R.string.checkInternet, Toast.LENGTH_SHORT).show();
             }
         });
 
 
-        tvBack.setOnClickListener(new View.OnClickListener() {
+        tvDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 new AlertDialog.Builder(EditProfileActivity.this)
-                        .setTitle("Save Changes")
-                        .setMessage("Are you sure you want to save the changes ?")
+                        .setTitle(R.string.saveChangesdialoge)
+                        .setMessage(R.string.saveChangesMessage)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 //                                attemptEditProfile();
-                                Intent i = new Intent(EditProfileActivity.this, HomeActivity.class);
+                                Intent i = new Intent(EditProfileActivity.this, SettingsActivity.class);
                                 startActivity(i);
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
-                                Intent i = new Intent(EditProfileActivity.this, HomeActivity.class);
+                                Intent i = new Intent(EditProfileActivity.this, SettingsActivity.class);
                                 startActivity(i);
 
                             }
@@ -134,6 +134,12 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
         });
+        tvCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SettingsActivity.class));
+            }
+        });
 
 
     }
@@ -146,7 +152,7 @@ public class EditProfileActivity extends AppCompatActivity {
             focusView.requestFocus();
         } else {
             pDialog = new ProgressDialog(EditProfileActivity.this);
-            pDialog.setMessage("Logging in...");
+            pDialog.setMessage(getText(R.string.dialog_logging));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -154,7 +160,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
             uploadProfilePhoto(fileProfiePhotoPath);
 
-            editCurrentUser(email, userName, age, work, password, phone);
+            editCurrentUser(email, userName, age, work, fullname, phone);
 
 
         }
@@ -187,7 +193,7 @@ public class EditProfileActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RequestBody> call, Throwable t) {
 
-                Snackbar.make(etPassword, "Failed to upload profilePhoto", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(etfullName, R.string.err_toast, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         uploadProfilePhoto(fileProfiePhotoPath);
@@ -206,46 +212,46 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
         userName = etUserName.getText().toString();
-        password = etPassword.getText().toString();
+        fullname = etfullName.getText().toString();
         email = etEmail.getText().toString();
         phone = etPhoneNumber.getText().toString();
         age = etAge.getText().toString();
         work = etWork.getText().toString();
         boolean cancel = false;
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            etPassword.setError("Invalid password");
-            focusView = etPassword;
+        if (!TextUtils.isEmpty(fullname) && !isPasswordValid(fullname)) {
+            etfullName.setError(getText(R.string.loginpass_validation));
+            focusView = etfullName;
             cancel = true;
 
         }
         if (TextUtils.isEmpty(age)) {
-            etAge.setError("Empty age");
+            etAge.setError(getText(R.string.signup_age_validation));
             focusView = etAge;
             cancel = true;
         }
 
         if (TextUtils.isEmpty(work)) {
-            etWork.setError("Empty work");
+            etWork.setError(getText(R.string.signup_work_validation));
             focusView = etWork;
             cancel = true;
         }
 
         if (TextUtils.isEmpty(phone)) {
-            etPhoneNumber.setError("Empty phone");
+            etPhoneNumber.setError(getText(R.string.signup_phonenumber_validation));
             focusView = etPhoneNumber;
             cancel = true;
         }
         if (TextUtils.isEmpty(userName)) {
-            etUserName.setError("Empty UserName");
+            etUserName.setError(getText(R.string.signup_username_validation));
             focusView = etUserName;
             cancel = true;
         }
         if (TextUtils.isEmpty(email)) {
-            etEmail.setError("Empty username");
+            etEmail.setError(getText(R.string.signup_emptymail_validation));
             focusView = etEmail;
             cancel = true;
         } else if (!isEmailValid(email)) {
-            etEmail.setError("Invalid email");
+            etEmail.setError(getText(R.string.signup_invalidmail_validation));
             focusView = etEmail;
             cancel = true;
         }
@@ -278,7 +284,7 @@ public class EditProfileActivity extends AppCompatActivity {
             public void onFailure(Call<UsersInfoForEditingProfile> call, Throwable t) {
                 pDialog.dismiss();
 
-                Snackbar.make(etPassword, "Connection Failed!", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(etfullName, R.string.txt_connection_Failed, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         attemptEditProfile();
@@ -292,20 +298,21 @@ public class EditProfileActivity extends AppCompatActivity {
 
 
     private void selectImage() {
-        final CharSequence[] options = {"Take Photo", "Gallery"};
+        final CharSequence[] options = {getApplicationContext().getResources().getString(R.string.option_camera)
+                , getApplicationContext().getResources().getString(R.string.option_gallery)};
 
         AlertDialog.Builder builder = new AlertDialog.Builder(
                 EditProfileActivity.this);
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {
-                if (options[item].equals("Take Photo")) {
+                if (options[item].equals(getApplicationContext().getResources().getString(R.string.option_camera))) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     f = new File(Environment
                             .getExternalStorageDirectory(), "temp.jpg");
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
                     startActivityForResult(intent, 1);
-                } else if (options[item].equals("Gallery")) {
+                } else if (options[item].equals(getApplicationContext().getResources().getString(R.string.option_gallery))) {
                     Intent intent = new Intent(
                             Intent.ACTION_PICK,
                             MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -360,7 +367,7 @@ public class EditProfileActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.smthing_went_wrong, Toast.LENGTH_LONG).show();
         }
     }
 

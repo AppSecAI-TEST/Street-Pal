@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Street Pal</string>
+    <string name="password">كلمة السر</string>
+    <string name="user_name">البريد الإلكتروني أو اسم المستخدم</string>
+    <string name="select_contact">اختر جهة اتصال موثوق بها</string>
+    <string name="contact_name">الاسم</string>
+    <string name="register_txt">لا تملك حسابا؟ <b>قم بالتسجيل الآن </b></string>
+    <string name="contact_mob">رقم الهاتف</string>
+    <string name="select_button">اختر</string>
+    <string name="action_done">تم الإرسال</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="OPenG">فتح الاستوديو</string>
+    <string name="cancel_button">إلغاء</string>
+    <string name="recording">جاري التسجيل</string>
+    <string name="tvnumber">رقم الهاتف</string>
+    <string name="tvsignUP">إنشاء حساب</string>
+    <string name="tvuploadPP">اختر الصورة الشخصية</string>
+    <string name="OPenC">فتح الكاميرا</string>
+    <string name="EditTxt">رمز التأكيد</string>
+    <string name="btn1">إرسال</string>
+    <string name="btn2">إعادة إرسال</string>
+    <string name="b">اختر من</string>
+    <string name="TxtView">سيتم إرسال رمز التأكيد خلال دقيقة
+    </string>
+    <string name="privateinfo">المعلومات الشخصية</string>
+    <string name="confrim_title">تأكيد الهوية</string>
+    <string-array name="Sex">
+        <item>أنثى</item>
+        <item>ذكر</item>
+        <item>أخرى</item>
+    </string-array>
+    <string name="tv_upload_profile_picture">تحميل الصورة الشخصية</string>
+    <string name="change_profile_text">تحديث الصورة الشخصية</string>
+    <string name="user_name_hint">اسم المستخدم</string>
+    <string name="mail_hint">البريد الإلكتروني</string>
+    <string name="phone_number_hint">رقم الهاتف المحمول</string>
+    <string name="sex_hint">الجنس</string>
+    <string name="age_hint">العمر</string>
+    <string name="work_hint">الوظيفة</string>
+    <string name="national_id_hint">الرقم القومي</string>
+    <string name="password_hint">كلمة السر</string>
+    <string name="back_button">إلغاء</string>
+    <string name="btn_done">حفظ</string>
+    <string name="edtiprofile">تحديث البيانات الشخصية</string>
+    <string name="username">اسم المستخدم</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="call_for_help">طلب المساعدة</string>
+    <string name="upload_national_card">تحميل بطاقة الرقم القومي</string>
+    <string name="editProfileFullName">الإسم</string>
+    <string name="name">الاسم</string>
+    <string name="editProfilePrivateInfo">المعلومات الشخصية</string>
+    <string name="helpConfirmation">تأكيد طلب المساعدة</string>
+    <string name="Confirmation_Message">سيتم إرسال موقعك خلال 10 ثوان، إذا كنت ترغب في إلغاء طلب المساعدة اختر إلغاء الأمر</string>
+    <string name="Welcome">أهلا بك</string>
+    <string name="string">في حال كنت بحاجة للمساعدة ولم تجدها، يمكنك الاتصال بنا مباشرة </string>
+    <string name="string2">أنا بيتم التحرش بيا، اعمل ايه؟</string>
+    <string name="string3">أنا تم التحرش بيا حالًا، مش عارفة اعمل ايه؟</string>
+    <string name="string1">شخص ما ماشي ورايا من مدة وعندي إحساس إنه هيتحرش بيا، اعمل ايه؟</string>
+    <string name="WelcomeText">أخبرنا ماذا يحدثّ؟</string>
+    <string name="title_activity_congratulation">تهانينا</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="add_trusted_contact">أضف جهة اتصال موثوق بها</string>
+    <string name="skip">تخطى</string>
+    <string name="select_your_trusted_contact">اختر شخصا تثق به</string>
+    <string name="select_your_trusted_contact_part2">ليساعدك لاحقا</string>
+    <string name="Your_selected_contact">جهة الاتصال الموثوق بها هي</string>
+    <string name="please_tab_next">من فضلك اضغط التالي لإنهاء لتأكيد الاختيار</string>
+    <string name="title_location_permission">استخدام الموقع</string>
+    <string name="text_location_permission">قم بإتاحة استخدام موقع الجهاز</string>
+    <string name="ok">حسنا</string>
+    <string name="Safe_Places">أماكن آمنة</string>
+    <string name="select_place_that_y_need">قم باختار المكان الذي تريده ثم اضغط بدء</string>
+    <string name="mark_safe">بأمان الآن؟</string>
+    <string name="call_vol">اتصل بالرقم الموثوق به</string>
+    <string name="text_dialog_choose">قم بالاختيار</string>
+    <string name="option_camera">كاميرا</string>
+    <string name="option_gallery">الاستوديو</string>
+    <string name="err_toast">خطأ أثناء محاولة رفع الصورة</string>
+    <string name="txt_try_toUpload_again">أعد المحاولة</string>
+    <string name="uploaded_successfully">تم رفع الصورة الشخصية بنجاح</string>
+    <string name="smthing_went_wrong">حدث خطأ ما</string>
+    <string name="exit">خروج</string>
+    <string name="txt_are_you_sure">تأكيد الخروج؟</string>
+    <string name="loginmail_validation">أدخل اسم المستخدم أو البريد الإلكتروني</string>
+    <string name="loginpass_validation">أدخل كلمة السر</string>
+    <string name="txt_connection_Failed">حدث خطأ بالاتصال</string>
+    <string name="dialog_logging">جاري تسجيل الدخول</string>
+    <string name="dialog_signing_up">جاري إنشاء حساب</string>
+    <string name="signup_name_validation">أدخل الاسم</string>
+    <string name="signup_emptymail_validation">أدخل البريد الإلكتروني</string>
+    <string name="signup_invalidmail_validation">البريد الإلكتروني غير سليم</string>
+    <string name="signup_age_validation">أدخل العمر</string>
+    <string name="signup_phonenumber_validation">أدخل رقم الهاتف</string>
+    <string name="signup_username_validation">أدخل اسم المستخدم</string>
+    <string name="signup_work_validation">أدخل الوظيفة</string>
+    <string name="signup_nationalid_validation">أدخل الرقم القومي</string>
+    <string name="select_trusted_contact_dialog_title">اختيار جهة اتصال</string>
+    <string name="select_trusted_contact_dialog_message">تأكيد اختيار جهة الاتصال؟</string>
+    <string name="select_trusted_contact_dialog_message_skipping">تأكيد تخطي هذه الخطوة؟</string>
+    <string name="confimation_code_validation">أدخل رمز التأكيد</string>
+
+
+    <string name="checkInternet">يبدو أن جهازك غير متصل بالانترنت</string>
+    <string name="saveChangesdialoge">حفظ</string>
+    <string name="saveChangesMessage">حفظ التغييرات؟</string>
+    <string name="txtcontactAccessNeeded">استخدام جهات الاتصال</string>
+    <string name="txtcontactAccessNeededmessage">يحتاج التطبيق إلى استخدام جهات الاتصال الخاصة بك </string>
+    <string name="txtNoPermissions">لا توجد </string>
+    <string name="resolutionRequired">Resolution Required</string>
+    <string name="txtSettingsChange">لا يمكن تغيير الإعدادات</string>
+    <string name="txtLoading">جاري التحميل...</string>
+    <string name="txtRecordingstop">تم إيقاف التسجيل</string>
+    <string name="txtSuccess">تم بنجاح</string>
+    <string name="mapyourLocation">موقعك</string>
+
+
+    <!-- Settings Activity -->
+
+    <string name="setting">خيارات</string>
+    <string name="settings">إعدادات</string>
+    <string name="language">اللغة</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="account">حساب</string>
+    <string name="editProfile">تحديث البيانات الشخصية</string>
+    <string name="Change_Password">تغيير كلمة السر</string>
+    <string name="trusted_contact">جهة الاتصال الموثوق بها</string>
+    <string name="Report_a_problem">إبلاغ عن عطل</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="support">الدعم </string>
+    <string name="password1">كلمة السر</string>
+    <string name="cancel">إلغاء</string>
+    <string name="done">تم</string>
+    <string name="current_password">كلمة السر الحالية</string>
+    <string name="new_password">كلمة السر الجديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة السر الجديدة</string>
+    <string name="united_kingdom">(المملكة المتحدة)</string>
+    <string name="english">الانجليزية</string>
+    <string name="egypt">(مصر)</string>
+    <string name="arabic">العربية</string>
+    <string name="add_new">إضافة جهة اتصال</string>
+    <string name="remove">حذف</string>
+    <string name="edit">تغيير</string>
+    <string name="privacypolicy">سياسة الخصوصية</string>
+    <string name="Feedback">تقييم</string>
+    <string name="send">إرسال</string>
+    <string name="generalfeedback">تقييم عام</string>
+    <string name="loginpass_validation_invalid">كلمة سر غير صحيحة</string>
+    <string name="changepass">تغيير كلمة السر</string>
+    <string name="sendmail_feedbackActivity">إرسال بريد إلكتروني</string>
+    <string name="feedback_err">من فضلك قم بإدخال التقييم</string>
+    <string name="Briefly">حدد المميزات وما يجب تحسينه</string>
+    <string name="err_changePass">كلمة السر غير متطابقة</string>
+
+
+    <!--____________________________ FQAs ______________________-->
+    <string name="static_guide_title">نقوم بدعمك من خلال الدليل لتفادي المواقف الخطرة</string>
+
+    <string name="static_guide_case1">أنا بيتم التحرش بيا، اعمل ايه؟</string>
+    <string name="static_guide_case1_instruction"> . سيتم إرسال إشارة تأهب، هنبعت أقرب متطوعين، وسيتم أيضًا تنبيه الأشخاص الموثوقين بالموقف\n
+ . خلال الوقت دا، اتبعي الإرشادات\n
+ . حاولي إثارة الانتباه بصوت عالي واطلبي المساعدة، حددي اللي بيحصل بالظبط "تحرش"\n
+ . اطلبي من الناس يساعدوك تاخديه أقرب مركز شرطة ويقوموا بالإدلاء بشهادتهم لإرفاقها بمحضر التحرش الرسمي\n
+</string>
+
+
+    <string name="static_guide_case2">تم التحرش بيا وأنا حاليًا في مركز الشرطة، إيه الخطوات اللي علي عملها؟</string>
+    <string name="static_guide_case2_instructions"> . سيتم إرسال إشارة تأهب، هنبعت أقرب متطوعين، وسيتم أيضًا تنبيه الأشخاص الموثوقين بالموقف \n
+ . خلال الوقت دا، اتبعي الإرشادات \n
+ . فور الوصول اسألي عن مكتب حقوق الإنسان واطلبي فتح محضر تحرش رسمي \n
+ . قدمي التقرير الطبي، لو معاك، واطلبي إرفاقه بالمحضر \n
+ . ممكن تتصلي ب"نظرة للدراسات النسوية" للدعم القانوني والنفسي، 01011910917. نظرة هتبعت لك محامي لو متاح \n
+ . اتأكدي من انك تحددي كل اللي حصل بالضبط، وايوا، تقدري تعملي المحضر حتى لو لم يتم الامساك بالمتحرش \n
+ . اتأكدي من وصف المتحرش بأفضل طريقة ممكنة \n
+ . احتفظي برقم المحضر وتابعي التحقيقات \n
+ . لو تم رفض مساعدتك في مركز الشرطة، قومي بالابلاغ عن الواقعة عن طريق الخط الساخن لوزارة الداخلية،138 \n
+ . لو تمت اصابتك، أو بحاجة للتقرير الطبي، توجهي لأقرب مستشفى واطلبي توجيهك لغرفة الطواريء، اخضعي للفحص واطلبي تقرير طبي \n
+ . لو محتاجة تتكلمي مع مختصين، ممكن تتصلي ب"مركز النديم للعلاج والتأهيل النفسي"، 01006662404 \n
+ . ممكن تتصلي ب"نظرة للدراسات النسوية" للدعم النفسي، 01011910917 \n
+ . في خلال يومين، هيكون عليك التوجه لمكتب المباحث العامة وتدلي بموقفك مرة تانية برفقة المحامي \n
+</string>
+
+
+    <string name="static_guide_case3">
+تم التحرش بيا، وعملت محضر في قسم الشرطة، إيه الخطوة التالية؟</string>
+    <string name="static_guide_case3_instructions"> . ممكن تتصلي ب"نظرة للدراسات النسوية" للدعم القانوني والنفسي، 01011910917. نظرة هتبعت لك محامي لو متاح\n
+ . اتأكدي من انك تحددي كل اللي حصل بالضبط، ليك الحق انك تدلي بموقفك في مساحات مختلفة بعيدة عن محيط المتحرش \n
+ . احتفظي برقم المحضر وتابعي التحقيقات \n
+ . لو تم رفض مساعدتك في مركز الشرطة، قومي بالابلاغ عن الواقعة عن طريق الخط الساخن لوزارة الداخلية، 138 \n
+ . لو تمت اصابتك، أو بحاجة للتقرير الطبي، توجهي لأقرب مستشفى واطلبي توجيهك لغرفة الطواريء، اخضعي للفحص واطلبي تقرير طبي \n
+ . لو محتاجة تتكلمي مع مختصين، ممكن تتصلي ب"مركز النديم للعلاج والتأهيل النفسي"، 01006662404 \n
+ . ممكن تتصلي ب"نظرة للدراسات النسوية" للدعم النفسي، 01011910917 \n
+ . في خلال يومين، هيكون عليك التوجه لمكتب المباحث العامة وتدلي بموقفك مرة تانية برفقة المحامي \n
+ . اتبعي تعليمات المحامي، ماتتراجعيش أبدًا في ادلائك \n
+ . إذا تم تهديدك من عائلة المتحرش، بلغي المحامي واطلبي حظر اقتراب ضدهم \n
+ . تابعي قضيتك لحد ما توصل للنيابة ويتم معاقبة المتحرش \n
+</string>
+
+
+    <string name="static_guide_case4">تم التحرش بيا، وتمت إصابتي جسديًا، اعمل ايه؟ </string>
+    <string name="static_guide_case4_instructions"> . سيتم إرسال إشارة تأهب، هنبعت أقرب متطوعين، وسيتم أيضًا تنبيه الأشخاص الموثوقين بالموقف \n
+ . خلال الوقت دا، اتبعي الإرشادات \n
+ . لو تمت اصابتك، أو بحاجة للتقرير الطبي، توجهي لأقرب مستشفى واطلبي توجيهك لغرفة الطواريء، اخضعي للفحص واطلبي تقرير طبي، كما سنوضح ليك الطريق لأقرب مكان آمن \n
+ . تقدري دايمًا تتوجهي لأقرب مركز شرطة وفتح محضر تحرش رسمي \n
+
+</string>
+
+
+    <string name="static_guide_case5">مريت بتجربة التحرش، وبحاجة للفضفضة، اعمل ايه؟</string>
+    <string name="static_guide_case5_instructions"> . سيتم إرسال إشارة تأهب، هنبعت أقرب متطوعين، وسيتم أيضًا تنبيه الأشخاص الموثوقين بالموقف \n
+ . خلال الوقت دا، اتبعي الإرشادات \n
+ . لو تمت اصابتك، أو بحاجة للتقرير الطبي، توجهي لأقرب مستشفى واطلبي توجيهك لغرفة الطواريء، اخضعي للفحص واطلبي تقرير طبي، كما سنوضح ليك الطريق لأقرب مكان آمن \n
+ . تقدري دايمًا تتوجهي لأقرب مركز شرطة وفتح محضر تحرش رسمي \n
+
+</string>
+
+    <!--____________________________ User guide ______________________-->
+    <string name="user_guide_postive_button">نعم</string>
+    <string name="user_guide_negative_button">لا</string>
+    <string name="user_guide_neutral_button">تم التحرش بيا</string>
+    <string name="user_guide_question_1">أقدر أساعدك ازاي؟</string>
+    <string name="user_guide_case_1">شخص ما ماشي ورايا وعندي إحساس إنه هيتحرش بيا</string>
+    <string name="user_guide_case_2">أنا بيتم التحرش بيا</string>
+    <string name="user_guide_case_1_qustion1">هل المكان حواليك آمن؟ هل يبدو إن الناس ممكن يساعدوا؟</string>
+    <string name="user_guide_case_1_qustion2"> 
+•	واجهي الشخص باتباعه ليك وابدأي اتصال مباشر بالعين. \n
+•	صوتك سلاح قوي، افتكري انك تستخدميه أكتر وأكتر. \n
+•	تقدري تسأليه بحزم وبطريقة مباشرة، "فيه حاجة؟ من الصبح عمال تبص لي؟ حضرتك تعرفني؟" \n
+•	حطّي سلامتك دايمًا في المقدمة، مش لازم أبدًا تعملي أي حاجة تعرضك للخطر.\n
+
+        </string>
+    <string name="user_guide_user_safe">احنا في غاية السعادة إنك بخير وأمان، تقدري تشاركي تجربتك وتنشري الابليكيشن علشان نقدر نساعد ناس أكتر</string>
+    <string name="user_guide_button_map">فتح الخريطة</string>
+    <string name="user_guide_button_know_more">احنا هنوجهك لدليل كامل، اختاري "توجه إلى الدليل"</string>
+    <string name="user_guide_button_go_to_guide">توجه إلى الدليل</string>
+    <string name="user_guide_user_not_safe">احنا هنبعت رسالة لجهة الاتصال الموثوق بها،اختاري "فتح الخريطة" علشان تختاري أقرب مكان آمن تتوجهي ليه</string>
+
+
+    <string name="string1_card_item">أنا تم التحرش بيا حالًا، مش عارفة اعمل ايه؟</string>
+    <string name="string2_card_item">تم التحرش بيا وأنا حاليًا في مركز الشرطة، إيه الخطوات اللي علي عملها؟</string>
+    <string name="string3_card_item">تم التحرش بيا، وعملت محضر في قسم الشرطة، إيه الخطوة التالية؟</string>
+    <string name="string4_card_item">تم التحرش بيا، وتمت إصابتي جسديًا، اعمل ايه؟</string>
+    <string name="string5_card_item">تم التحرش بيا، وأحتاج الى الفضفضة ، أعمل إيه؟</string>
+</resources>

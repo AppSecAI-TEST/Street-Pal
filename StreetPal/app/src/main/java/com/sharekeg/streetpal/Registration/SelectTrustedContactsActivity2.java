@@ -45,8 +45,8 @@ public class SelectTrustedContactsActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(SelectTrustedContactsActivity2.this)
-                        .setTitle("Select Contact")
-                        .setMessage("Are you sure you want to select this contact ?")
+                        .setTitle(R.string.select_trusted_contact_dialog_title)
+                        .setMessage(R.string.select_trusted_contact_dialog_message)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent i = new Intent(SelectTrustedContactsActivity2.this, CongratulationActivity.class);
@@ -70,8 +70,8 @@ public class SelectTrustedContactsActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(SelectTrustedContactsActivity2.this)
-                        .setTitle("Select Contact")
-                        .setMessage("Are you sure you want to skip this step ?")
+                        .setTitle(R.string.select_trusted_contact_dialog_title)
+                        .setMessage(R.string.select_trusted_contact_dialog_message_skipping)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent i = new Intent(SelectTrustedContactsActivity2.this, CongratulationActivity.class);

@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sharekeg.streetpal.Androidversionapi.ApiInterface;
@@ -35,20 +37,22 @@ import retrofit2.Retrofit;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HomeTab extends Fragment {
+public class HomeTab extends Fragment implements View.OnClickListener {
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
-    private ImageView ivCallForHelp;
+    private ImageView imageView1, imageView2, imageView3;
     private View myFragmentView;
-    private TextView tvWelcomeUser, tvName;
+    private TextView tvWelcomeUser, tvHint, textView1, textView2, textView3;
     private Context context;
     private LocationManager locationManager;
     private LocationListener locationListener;
     private double lat;
+    private StreetPalGuide streetPalGuide;
     private double lon;
     AlertDialog alert;
     private EditText etName;
     Retrofit retrofit;
     AlertDialog Dilaog;
+    private RelativeLayout firstCardLayout, secondCardLayout, thirdCardLayout;
 
     public HomeTab() {
         // Required empty public constructor
@@ -59,234 +63,77 @@ public class HomeTab extends Fragment {
         // Inflate the layout for this fragment
         context = getContext();
         myFragmentView = inflater.inflate(R.layout.fragment_home_tab, container, false);
-        ivCallForHelp = (ImageView) myFragmentView.findViewById(R.id.ivCallForHelp);
-        tvName = (TextView) myFragmentView.findViewById(R.id.tvName);
+
         tvWelcomeUser = (TextView) myFragmentView.findViewById(R.id.tv_welcome_user);
-        HomeActivity activity = (HomeActivity) getActivity();
-        String userName = activity.sendUserName();
-        tvName.setText(userName);
-//        etName = (EditText) getActivity().findViewById(R.id.etName);
-//        Name = etName.getText().toString();
-//        tvWelcomeUser.setText("Welcome");
+        tvHint = (TextView) myFragmentView.findViewById(R.id.hint);
+        textView1 = (TextView) myFragmentView.findViewById(R.id.textView1);
+        textView2 = (TextView) myFragmentView.findViewById(R.id.textView2);
+        textView3 = (TextView) myFragmentView.findViewById(R.id.textView3);
+        imageView1 = (ImageView) myFragmentView.findViewById(R.id.imageView1);
+        imageView2 = (ImageView) myFragmentView.findViewById(R.id.imageView2);
+        imageView3 = (ImageView) myFragmentView.findViewById(R.id.imageView3);
 
-        locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
-        locationListener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                lat = location.getLatitude();
-                lon = location.getLongitude();
-//                Toast.makeText(getContext(), "Latitude is " + lat, Toast.LENGTH_SHORT).show();
-//                Toast.makeText(getContext(), "Longtiude is " + lon, Toast.LENGTH_SHORT).show();
+        firstCardLayout = (RelativeLayout) myFragmentView.findViewById(R.id.first_card);
+        firstCardLayout.setOnClickListener(this);
 
+        secondCardLayout = (RelativeLayout) myFragmentView.findViewById(R.id.second_card);
+        secondCardLayout.setOnClickListener(this);
 
-            }
+        thirdCardLayout = (RelativeLayout) myFragmentView.findViewById(R.id.third_card);
+        thirdCardLayout.setOnClickListener(this);
 
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-                if (ActivityCompat.checkSelfPermission(context,
-                        Manifest.permission.ACCESS_FINE_LOCATION)
-                        != PackageManager.PERMISSION_GRANTED) {
-
-                    // Should we show an explanation?
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                            Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                        // Show an explanation to the user *asynchronously* -- don't block
-                        // this thread waiting for the user's response! After the user
-                        // sees the explanation, try again to request the permission.
-                        new AlertDialog.Builder(context)
-                                .setTitle(R.string.title_location_permission)
-                                .setMessage(R.string.text_location_permission)
-                                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        //Prompt the user once explanation has been shown
-                                        ActivityCompat.requestPermissions(getActivity(),
-                                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                                MY_PERMISSIONS_REQUEST_LOCATION);
-                                    }
-                                })
-                                .create()
-                                .show();
-
-
-                    } else {
-                        // No explanation needed, we can request the permission.
-                        ActivityCompat.requestPermissions(getActivity(),
-                                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                MY_PERMISSIONS_REQUEST_LOCATION);
-                    }
-                }
-            }
-        };
-        ConfigarButton();
 
         return myFragmentView;
     }
 
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        //  super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        switch (requestCode) {
-//            case 10:
-//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-//                    ConfigarButton();
-//                return;
-//        }
-//    }
+    private void startStreetPalGuide() {
 
-    private void ConfigarButton() {
-        ivCallForHelp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final AlertDialog.Builder dialog = new AlertDialog.Builder(v.getContext());
-                dialog.setTitle("Help Confirmation");
-                dialog.setCancelable(false);
-                dialog.setMessage("Your location will be send within 10s,If you want to cancel help click cancel.");
-                dialog.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        dialog.dismiss();
+        //Starting the street pal fragment when user click call for help button
 
-                    }
-                });
-                final AlertDialog alert = dialog.create();
-                alert.show();
-
-// opreation after some seconds
-                final Handler handler = new Handler();
-                final Runnable runnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        if (alert.isShowing()) {
-                            alert.dismiss();
-//                            after 10s
-                            OpenSavePlace();
-                        }
-                    }
-                };
-
-                alert.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        handler.removeCallbacks(runnable);
-                    }
-                });
-
-                handler.postDelayed(runnable, 10000);
-//                //   currenLocation();
-
-            }
-        });
-
-        locationManager.requestLocationUpdates("gps", 1000, 10, locationListener);
-        if (ActivityCompat.checkSelfPermission(context,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-                new AlertDialog.Builder(context)
-                        .setTitle(R.string.title_location_permission)
-                        .setMessage(R.string.text_location_permission)
-                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //Prompt the user once explanation has been shown
-                                ActivityCompat.requestPermissions(getActivity(),
-                                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                        MY_PERMISSIONS_REQUEST_LOCATION);
-                            }
-                        })
-                        .create()
-                        .show();
-
-
-            } else {
-                // No explanation needed, we can request the permission.
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        MY_PERMISSIONS_REQUEST_LOCATION);
-            }
-        }
+        StreetPalGuide streetPalGuideFragment = new StreetPalGuide();
+        this.getFragmentManager().beginTransaction()
+                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .replace(R.id.rlFragments, streetPalGuideFragment)
+                .commit();
 
     }
 
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.first_card:
+                startStreetPalGuide();
 
-                    // permission was granted, yay! Do the
-                    // location-related task you need to do.
-                    if (ActivityCompat.checkSelfPermission(context,
-                            Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED) {
+                break;
+            case R.id.second_card:
+                startStreetPalGuide();
 
-                        //Request location updates:
-                        locationManager.requestLocationUpdates("gps", 1000, 10, locationListener);
+                break;
+            case R.id.third_card:
+                startListOfChoicesFragment();
+                break;
 
-                    }
-
-                } else {
-
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-
-                }
-                return;
-            }
         }
     }
-//        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            requestPermissions(new String[]{
-//                    Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,
-//                    Manifest.permission.INTERNET
-//            }, 10);
-//        }
-//        return;
-//    }
 
-    private void currenLocation(double lat, double lon) {
-        ApiInterface mApi = retrofit.create(ApiInterface.class);
-        Call<CurrenLocation> mycall = mApi.SetLocation(new CurrenLocation(lat, lon));
-        mycall.enqueue(new Callback<CurrenLocation>() {
-            @Override
-            public void onResponse(Call<CurrenLocation> call, Response<CurrenLocation> response) {
+    private void startListOfChoicesFragment() {
 
-            }
 
-            @Override
-            public void onFailure(Call<CurrenLocation> call, Throwable t) {
+        ListOfChoices listOfChoicesFragment = new ListOfChoices();
+        this.getFragmentManager().beginTransaction()
+                .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+                .replace(R.id.rlFragments, listOfChoicesFragment)
+                .commit();
 
-            }
-        });
+
+
+
     }
-
-
-    public void OpenSavePlace() {
-
-        Intent intent = new Intent(getActivity(), SafePlaceActivity.class);
-        startActivity(intent);
-    }
-
 }

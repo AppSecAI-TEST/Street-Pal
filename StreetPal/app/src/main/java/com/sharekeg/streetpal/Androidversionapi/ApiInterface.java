@@ -1,5 +1,6 @@
 package com.sharekeg.streetpal.Androidversionapi;
 
+import com.sharekeg.streetpal.Settings.ChangePassword;
 import com.sharekeg.streetpal.safeplace.Guide;
 import com.sharekeg.streetpal.userinfoforeditingprofile.UsersInfoForEditingProfile;
 import com.sharekeg.streetpal.userinfoforlogin.CurrenLocation;
@@ -60,6 +61,10 @@ public interface ApiInterface
 
     @GET("posts")
     Call<List<Guide>> getGuide();
+    
+    @POST("/me/pass")
+    Call<ChangePassword> sendPassword(@Body ChangePassword data);
+
 
 
 }

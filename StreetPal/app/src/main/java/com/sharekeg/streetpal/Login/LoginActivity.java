@@ -39,10 +39,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Exit");
-        dialog.setMessage("Are You Sure ?");
-        dialog.setPositiveButton("No", null);
-        dialog.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+        dialog.setTitle(R.string.exit);
+        dialog.setMessage(R.string.txt_are_you_sure);
+        dialog.setPositiveButton(android.R.string.no, null);
+        dialog.setNegativeButton(android.R.string.yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 LoginActivity.super.onBackPressed();
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             loginProcessWithRetrofit(userName, password);
             pDialog = new ProgressDialog(LoginActivity.this);
-            pDialog.setMessage("Logging in...");
+            pDialog.setMessage(String.valueOf(R.string.dialog_logging));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.show();
@@ -100,13 +100,13 @@ public class LoginActivity extends AppCompatActivity {
         boolean cancel = false;
 
         if (TextUtils.isEmpty(userName)) {
-            etUsername.setError("Empty username or email");
+            etUsername.setError(getText(R.string.loginmail_validation));
             focusView = etUsername;
             cancel = true;
 
         }
         if (TextUtils.isEmpty(password)) {
-            etPassword.setError("Empty password");
+            etPassword.setError(getText(R.string.loginpass_validation));
             focusView = etPassword;
             cancel = true;
 
@@ -136,7 +136,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginCredentials> call, Throwable t) {
                 pDialog.dismiss();
-                Snackbar.make(btLogin, "Connection Failed", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(btLogin, R.string.txt_connection_Failed, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         attemptLogin();
@@ -152,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
     private ApiInterface getInterfaceService() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.27.27.86/v0/")
+                .baseUrl("http://sharekeg.com:8088/v0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         final ApiInterface mInterfaceService = retrofit.create(ApiInterface.class);

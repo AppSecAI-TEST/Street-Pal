@@ -50,8 +50,8 @@ public class SelectTrustedContactsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new AlertDialog.Builder(SelectTrustedContactsActivity.this)
-                        .setTitle("Select Contact")
-                        .setMessage("Are you sure you want to skip this step ?")
+                        .setTitle(R.string.select_trusted_contact_dialog_title)
+                        .setMessage(R.string.select_trusted_contact_dialog_message_skipping)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent i = new Intent(SelectTrustedContactsActivity.this, CongratulationActivity.class);
@@ -80,9 +80,9 @@ public class SelectTrustedContactsActivity extends AppCompatActivity {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                         Manifest.permission.READ_CONTACTS)) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setTitle("Contacts access needed");
+                    builder.setTitle(R.string.txtcontactAccessNeeded);
                     builder.setPositiveButton(android.R.string.ok, null);
-                    builder.setMessage("please confirm Contacts access");//TODO put real question
+                    builder.setMessage(R.string.txtcontactAccessNeededmessage);//TODO put real question
                     builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
                         @TargetApi(Build.VERSION_CODES.M)
                         @Override
@@ -131,7 +131,7 @@ public class SelectTrustedContactsActivity extends AppCompatActivity {
                     // contacts-related task you need to do.
 
                 } else {
-                    Toast.makeText(this, "No Permissions ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, R.string.txtNoPermissions, Toast.LENGTH_SHORT).show();
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }

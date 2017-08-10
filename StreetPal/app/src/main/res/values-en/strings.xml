@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string1_card_item">I don\'t know what to do</string>
+    <string name="string2_card_item">I am now at the police station, what should i do?</string>
+    <string name="string3_card_item">I filed a report at the police station, what  should i do?</string>
+    <string name="string4_card_item">I have physical injuries, what should i do?</string>
+    <string name="string5_card_item">I need to talk to someone, what should i do?</string>
+</resources>

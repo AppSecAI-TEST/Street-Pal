@@ -36,9 +36,9 @@
             android:layout_alignParentLeft="true"
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ic_notification_icon"
-            android:layout_marginLeft="10dp" />
+            android:src="@drawable/ic_notification_icon" />
 
         <ImageView
             android:id="@+id/ivSettings"
@@ -48,8 +48,8 @@
             android:layout_centerInParent="true"
             android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/ic_settings_img"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_settings_img" />
 
     </RelativeLayout>
 
@@ -85,11 +85,11 @@
         android:id="@+id/llbtns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/infolayout"
         android:layout_marginTop="10dp"
-        android:background="@drawable/black_borders"
-        android:layout_alignParentLeft="true">
+        android:background="@drawable/black_borders">
 
 
         <Button
@@ -135,13 +135,21 @@
 
 
     </LinearLayout>
+    <!--Layout for the street pal bot-->
+    <RelativeLayout
+        android:id="@+id/street_pal_guide_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llbtns"
+        android:background="#f1f1f1"></RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/rlFragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/llbtns"
-        android:background="@color/white">
+        android:background="@color/white"></RelativeLayout>
 
-    </RelativeLayout>
 </RelativeLayout>
+

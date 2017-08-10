@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 import com.sharekeg.streetpal.Androidversionapi.ApiInterface;
 import com.sharekeg.streetpal.R;
+import com.sharekeg.streetpal.Settings.SettingsActivity;
 import com.sharekeg.streetpal.homefragments.GuideTab;
 import com.sharekeg.streetpal.homefragments.HomeTab;
-import com.sharekeg.streetpal.homefragments.InfoTab;
 import com.sharekeg.streetpal.homefragments.MapTab;
 
 import java.io.File;
@@ -36,12 +36,11 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmentInteractionListener, MapTab.OnFragmentInteractionListener, GuideTab.OnFragmentInteractionListener {
+public class HomeActivity extends AppCompatActivity implements MapTab.OnFragmentInteractionListener, GuideTab.OnFragmentInteractionListener {
     private String token;
-    private Button  btnHome, btnNavigation, btnInformation, btnPosts;
+    private ImageView  ivHome, ivNavigation,ivPosts,ivSettings;
     HomeTab homeTab;
     MapTab mapTab;
-    InfoTab infoTab;
     GuideTab guideTab;
     private static String fileProfiePhotoPath = null;
     private int REQUEST_TAKE_profile_PHOTO = 2;
@@ -49,6 +48,7 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
     ImageView ivAddUserPhoto;
     ApiInterface apiInterface;
     private Retrofit retrofit;
+    Button icmap,ichome,icgiude;
    private  String userName = "Welcome Mohamed!";
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
@@ -66,18 +66,18 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         //  token = getIntent().getExtras().getString("Token");
-        btnHome = (Button) findViewById(R.id.btnHome);
-        btnNavigation = (Button) findViewById(R.id.btnNavigation);
-        btnInformation = (Button) findViewById(R.id.btnInformation);
-        btnPosts = (Button) findViewById(R.id.btnPosts);
+        ivHome = (ImageView) findViewById(R.id.ivhome);
+        ivNavigation = (ImageView) findViewById(R.id.ivmap);
+        ivPosts = (ImageView) findViewById(R.id.ivguide);
         ivAddUserPhoto = (ImageView) findViewById(R.id.ivAddUserPhoto);
         ivAddUserPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-                builder.setTitle("Choose Option")
-                        .setItems(new String[]{"Camera", "Gallery"}, new DialogInterface.OnClickListener() {
+                builder.setTitle(R.string.text_dialog_choose)
+                        .setItems(new String[]{getApplicationContext().getResources().getString(R.string.option_camera),
+                                getApplicationContext().getResources().getString(R.string.option_gallery)}, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 if (i == 0) {
@@ -100,52 +100,63 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
         });
         homeTab = new HomeTab();
         mapTab = new MapTab();
-        infoTab = new InfoTab();
         guideTab = new GuideTab();
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.rlFragments, homeTab)
                 .commit();
 
-        btnHome.setOnClickListener(new View.OnClickListener() {
+        ivSettings = (ImageView)findViewById(R.id.ivSettings) ;
+        ivSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, SettingsActivity.class);
+                startActivity(i);
+            }
+        });
+        ivHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openHomeTab();
+                ivNavigation.setBackgroundResource(R.drawable.ic_map);
+                ivHome.setBackgroundResource(R.drawable.ic_home_or);
+                ivPosts.setBackgroundResource(R.drawable.ic_guide);
+
 
             }
         });
-        btnNavigation.setOnClickListener(new View.OnClickListener() {
+        ivNavigation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNavigationTab();
-            }
-        });
-        btnInformation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openInfoTab();
+                ivNavigation.setBackgroundResource(R.drawable.ic_map_or);
+                ivHome.setBackgroundResource(R.drawable.ic_home);
+                ivPosts.setBackgroundResource(R.drawable.ic_guide);
             }
         });
 
-        btnPosts.setOnClickListener(new View.OnClickListener() {
+        ivPosts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openPostsTab();
+                ivNavigation.setBackgroundResource(R.drawable.ic_map);
+                ivHome.setBackgroundResource(R.drawable.ic_home);
+                ivPosts.setBackgroundResource(R.drawable.ic_guide_or);
             }
         });
 
 
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.5/v0/")
+                .baseUrl("http://sharekeg.com:8088/v0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
 
     }
-    public String sendUserName() {
-        return userName;
-    }
+//    public String sendUserName() {
+//        return userName;
+//    }
 
     private void openPostsTab() {
         getSupportFragmentManager()
@@ -155,20 +166,15 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
                 .commit();
     }
 
-    private void openInfoTab() {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                .replace(R.id.rlFragments, infoTab)
-                .commit();
-    }
+
 
     private void openNavigationTab() {
         getSupportFragmentManager()
                 .beginTransaction()
                 .setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
-                .replace(R.id.rlFragments, mapTab)
+                .replace(R.id.rlFragments,mapTab)
                 .commit();
+
     }
 
     private void openHomeTab() {
@@ -238,7 +244,7 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
 
             @Override
             public void onFailure(Call<RequestBody> call, Throwable t) {
-                Snackbar.make(ivAddUserPhoto, "Failed to upload Profile-Photo", Snackbar.LENGTH_INDEFINITE).setAction("Try Again", new View.OnClickListener() {
+                Snackbar.make(ivAddUserPhoto, R.string.err_toast, Snackbar.LENGTH_INDEFINITE).setAction(R.string.txt_try_toUpload_again, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         uploadProfilePhoto(fileProfiePhotoPath);
@@ -269,7 +275,7 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
                 cursor.close();
 
                 ivAddUserPhoto.setImageURI(selectedImage);
-                Toast.makeText(this, "profile Photo is uploaded Successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.uploaded_successfully, Toast.LENGTH_LONG).show();
                 //            uploadProfilePhoto(fileProfiePhotoPath);
 
 
@@ -289,13 +295,13 @@ public class HomeActivity extends AppCompatActivity implements InfoTab.OnFragmen
                 cursor.close();
 
                 ivAddUserPhoto.setImageURI(selectedImage);
-                Toast.makeText(this, "profile Photo is uploaded Successfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.uploaded_successfully, Toast.LENGTH_LONG).show();
                 //            uploadProfilePhoto(fileProfiePhotoPath);
 
 
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.smthing_went_wrong, Toast.LENGTH_LONG).show();
         }
     }
 

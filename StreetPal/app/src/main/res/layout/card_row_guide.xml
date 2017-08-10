@@ -9,26 +9,26 @@
     android:background="@color/white"
     app:cardUseCompatPadding="true">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white">
-
-    <TextView
-        android:id="@+id/tvguide"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@color/gray_rectangles_of_available_helping"
-        android:drawableLeft="@drawable/ic_org_icon"
-        android:drawablePadding="20dp"
-        android:drawableStart="@drawable/ic_org_icon"
-        android:padding="15dp"
-        android:text="@string/string1"
-        android:textColor="@color/black"
-        android:textSize="13dp" />
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvguide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@color/gray_rectangles_of_available_helping"
+            android:drawableLeft="@drawable/ic_org_icon"
+            android:drawablePadding="20dp"
+            android:drawableStart="@drawable/ic_org_icon"
+            android:padding="15dp"
+            android:text="@string/string1"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+    </RelativeLayout>
 
 </android.support.v7.widget.CardView>

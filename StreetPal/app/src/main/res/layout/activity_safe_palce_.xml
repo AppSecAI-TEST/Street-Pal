@@ -61,20 +61,31 @@
         <RelativeLayout
             android:id="@+id/rlMapView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
             android:layout_below="@id/UpperBarlayout">
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
-            <TextView
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.sharekeg.streetpal.safeplace.SafePlaceActivity" />
+
+
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hello map"
-                android:textColor="@color/black" />
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:onClick="onClick"
+                android:src="@drawable/ic_search"
+                android:text="Search" />
         </RelativeLayout>
+
         <View
             android:id="@+id/separator1"
             android:layout_width="match_parent"
@@ -82,20 +93,68 @@
             android:layout_below="@+id/rlMapView"
             android:layout_gravity="center_vertical"
             android:background="@color/upper_bar_layout" />
-        <LinearLayout
+
+        <RelativeLayout
             android:id="@+id/llrecording"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop="5dp"
             android:layout_below="@id/rlMapView"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
+
             <TextView
+                android:id="@+id/tvRecord"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hello recorder!"
-                android:textColor="@color/black" />
-        </LinearLayout>
+                android:layout_marginTop="10dp"
+                android:paddingLeft="14dp"
+                android:text="Recording"
+                android:textColor="@color/Black"
+                android:textSize="18dp" />
+
+            <Chronometer
+                android:id="@+id/chrono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/tvRecord"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/tvRecord"
+                android:layout_toRightOf="@id/tvRecord"
+                android:textColor="@color/Black" />
+
+
+            <ImageView
+                android:id="@+id/imPause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/imStop"
+                android:background="@drawable/ic_pause" />
+
+            <ImageView
+                android:id="@+id/imPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toLeftOf="@+id/imStop"
+                android:background="@drawable/ic_play" />
+
+
+            <ImageView
+                android:id="@+id/imStop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_stop" />
+
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/tipsLayout"
@@ -143,27 +202,28 @@
             android:id="@+id/tvSelectThenNavigate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/helplayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/helplayout"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="5dp"
             android:gravity="center_horizontal"
             android:text="@string/select_place_that_y_need"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
-        <Button
-            android:id="@+id/btnNavigate"
-            android:layout_width="220dp"
-            android:layout_height="37dp"
-            android:layout_below="@+id/tvSelectThenNavigate"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/navigate_btn"
-            android:text="@string/navigate"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="15sp" />
+        <!--<Button-->
+        <!--android:id="@+id/btnNavigate"-->
+        <!--android:layout_width="220dp"-->
+        <!--android:layout_height="37dp"-->
+        <!--android:layout_below="@+id/tvSelectThenNavigate"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="@color/navigate_btn"-->
+        <!--android:text="@string/navigate"-->
+        <!--android:textAllCaps="false"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="15sp" />-->
 
 
         <LinearLayout
@@ -171,7 +231,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/btnNavigate"
+            android:layout_below="@+id/tvSelectThenNavigate"
+            android:layout_marginTop="10dp"
             android:background="@color/submit_btn"
             android:orientation="horizontal">
 

@@ -10,6 +10,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="a.b.c.d.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -39,10 +42,17 @@
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".Registration.SignUpActivity" />
         <activity android:name=".Registration.ConfirmationActivity" />
+        <activity android:name=".Language.ChooseLanguage"/>
         <activity android:name=".Home.HomeActivity" />
         <activity android:name=".Home.EditProfileActivity" />
         <activity android:name=".Registration.CongratulationActivity" />
         <activity android:name=".safeplace.SafePlaceActivity" />
+        <activity android:name=".Settings.SettingsActivity" />
+        <activity android:name=".Settings.ChangePasswordActivity" />
+        <activity android:name=".Settings.LanguageActivity" />
+        <activity android:name=".Settings.EditSelectedTrustedContactsActivity" />
+        <activity android:name=".Settings.PrivacyPolicyActivity" />
+        <activity android:name=".Settings.Report_a_problem"></activity>
 
 
         <!--

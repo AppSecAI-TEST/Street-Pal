@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Fragment  layout for the street pal guide bot-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f1f1">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/chatList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/rlChoices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/user_first_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/replyshape"
+            android:gravity="left"
+            android:padding="8dp"
+            android:text="First Choice"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/user_second_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/replyshape"
+            android:gravity="bottom"
+            android:padding="8dp"
+            android:text="Second Choice"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/user_third_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/replyshape"
+            android:padding="8dp"
+            android:text="Third Choice"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</FrameLayout>
